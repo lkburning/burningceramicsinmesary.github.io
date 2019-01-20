@@ -5,15 +5,19 @@
   
 
   
-  <title>Hexo</title>
+  <title>垃圾回收机制 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="垃圾回收机制​    python里叶童java一样采用了垃圾回收机制。但是python采用的时引用计数机制为主，标记-清除和分代收集两种机制为辐的策略。 小整数对象池​    整数在程序中使用非常广泛，python为了优化速度，使用了小整数池，避免为整数频繁申请和销毁内存空间.Python 对小整数的定义是 [-5, 257) 这些整数对象是提前建立好的，不会被垃圾回收。在一个 Python 的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="垃圾回收机制">
+<meta property="og:url" content="http://yoursite.com/2018/07/20/垃圾回收机制/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="垃圾回收机制​    python里叶童java一样采用了垃圾回收机制。但是python采用的时引用计数机制为主，标记-清除和分代收集两种机制为辐的策略。 小整数对象池​    整数在程序中使用非常广泛，python为了优化速度，使用了小整数池，避免为整数频繁申请和销毁内存空间.Python 对小整数的定义是 [-5, 257) 这些整数对象是提前建立好的，不会被垃圾回收。在一个 Python 的">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-20T02:39:18.146Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="垃圾回收机制">
+<meta name="twitter:description" content="垃圾回收机制​    python里叶童java一样采用了垃圾回收机制。但是python采用的时引用计数机制为主，标记-清除和分代收集两种机制为辐的策略。 小整数对象池​    整数在程序中使用非常广泛，python为了优化速度，使用了小整数池，避免为整数频繁申请和销毁内存空间.Python 对小整数的定义是 [-5, 257) 这些整数对象是提前建立好的，不会被垃圾回收。在一个 Python 的">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -60,54 +64,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/01/06/hello-world/" class="article-date">
-  <time datetime="2019-01-06T12:14:15.557Z" itemprop="datePublished">2019-01-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/06/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/06/hello-world/" data-id="cjr4aoalr0000ukv325hfzan7" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-垃圾回收机制" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main"><article id="post-垃圾回收机制" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/07/20/垃圾回收机制/" class="article-date">
   <time datetime="2018-07-20T02:35:34.000Z" itemprop="datePublished">2018-07-20</time>
@@ -120,8 +77,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/20/垃圾回收机制/">垃圾回收机制</a>
+    <h1 class="article-title" itemprop="name">
+      垃圾回收机制
     </h1>
   
 
@@ -155,83 +112,28 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-虚拟环境" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/20/虚拟环境/" class="article-date">
-  <time datetime="2018-06-20T02:35:34.000Z" itemprop="datePublished">2018-06-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2019/01/06/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
+          Hello World
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/20/虚拟环境/">虚拟环境</a>
-    </h1>
   
+    <a href="/2018/06/20/虚拟环境/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">虚拟环境</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="虚拟环境"><a href="#虚拟环境" class="headerlink" title="虚拟环境"></a>虚拟环境</h3><p>什么时虚拟环境？</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#对真实的python解释器的一个拷贝版本</span></span><br><span class="line"><span class="comment">#是事实有效的，可以独立存在运行解释python代码</span></span><br><span class="line"><span class="comment">#可以在计算机上拷贝多个虚拟环境。</span></span><br></pre></td></tr></table></figure>
-<p>为什么要使用虚拟环境</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 保证真实环境的纯净性</span></span><br><span class="line"><span class="comment">#框架的多版本共存</span></span><br><span class="line"><span class="comment"># 方便做版本迭代（框架）</span></span><br><span class="line"><span class="comment"># 降低多框架共存的维护成本</span></span><br></pre></td></tr></table></figure>
-<p>安装虚拟环境</p>
-<h3 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h3><p>​    HTTP使用的是可靠数据传输协议，因此即使数据来自地球的另一端，他也能够确保数据在传输过程中不会被损坏或产生混乱。</p>
-<h4 id="web客户端与服务器"><a href="#web客户端与服务器" class="headerlink" title="web客户端与服务器"></a>web客户端与服务器</h4><p>​    web内容都是存储在web服务器上的。Web服务器所使用的是HTTP协议，因此进场会被称为HTTP服务器。这些HTTP服务器存储了因特网中的数据。如果HTTP客户端发出请求的话，它们会提供数据。总是这样的，客户端向服务器发送HTTP请求，服务器会在HTTP响应中回送所请求的数据。一次响应结束后，断开此次连接，等待下次继续连接，如图：</p>
-<p><img src="C:\Users\copy life\AppData\Roaming\Typora\typora-user-images\1546496059138.png" alt="1546496059138"></p>
-<h4 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h4><p>​    web服务器就是web资源（WEB RESOURCE）的宿主。Web资源是Web内容的源头。最简单的Web资源就是Web服务器文件系统的静态文件。这些文件可以包含任意内容：文本文件、HTML文件、微软的word文件、Adobe的Acrobat文件、JPEG图片文件、AVI电影文件，或所有其他你能够想到的格式。</p>
-<p>​    但是资源不一定非得是静态文件。资源还可以是根据需要生成内容的软件程序。这些动态内容可以根据你的身份、所请求的信息或每天不同时段来产生内容。</p>
-<p><img src="C:\Users\copy life\AppData\Roaming\Typora\typora-user-images\1546498181562.png" alt="1546498181562"></p>
-<p>所有能够提供web内容的东西都是Web资源。总之，所有类型的内容来源都是资源。</p>
-<h4 id="媒体类型"><a href="#媒体类型" class="headerlink" title="媒体类型"></a>媒体类型</h4><p>​    因特网上有数千种不同的数据类型，HTTP会仔细地给每种要通过Web传输的对象都打上了名为MIME类型的数据格式标签。Web服务器会为所有的HTTP对象数据附加一个MIME类型。当WEB浏览器从服务器中取回一个对象时，会去查看相关的MIME来行，看看它是否知道应该如何处理这个对象。大多数浏览器可以处理数百种常见的对象类型：显示图片文件、解析并格式化HTML文件、通过计算机声卡播放音频文件，或者运行外部插件软件来处理特殊格式的数据。</p>
-<p><img src="C:\Users\copy life\AppData\Roaming\Typora\typora-user-images\1546500040423.png" alt="1546500040423"></p>
-<p>​    MIME 类型是一种文本标记，表示一种主要的对象类型和一个特定的子类型，中间<br>由一条斜杠来分隔。<br>​    • HTML 格式的文本文档由 text/html 类型来标记。<br>​    • 普通的 ASCII 文本文档由 text/plain 类型来标记。<br>​    • JPEG 版本的图片为 image/jpeg 类型。<br>​    • GIF 格式的图片为 image/gif 类型。<br>​    • Apple 的 QuickTime 电影为 video/quicktime 类型。<br>​    • 微软的 PowerPoint 演示文件为 application/vnd.ms-powerpoint 类型。</p>
-<h4 id="URI"><a href="#URI" class="headerlink" title="URI"></a>URI</h4><p>​    每个Web服务器资源都有一个名字，这样客户端就可说明他们感兴趣的资源是什么了。服务器资源名被称为统一资源标识符（Uniform Resource Identifier）。URI就像因特网上的邮政地址一样，在世界范围内唯一标识并定位信息资源。它有两种形式URL和URN。</p>
-<h5 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h5><p>​    同一资源定位符（URL）是资源标识符最常见的形式。URL描述了一台特定服务器上某资源的特定位置。它可以明确说明如何从一个精确、固定的位置获取资源。</p>
-<p><img src="C:\Users\copy life\AppData\Roaming\Typora\typora-user-images\1546500579960.png" alt="1546500579960"></p>
-<p>大部分的URL都遵循一种标准格式，这种格式包含三个部分。</p>
-<p>​    • URL 的第一部分被称为方案（scheme），说明了访问资源所使用的协议类型。这<br>部分通常就是HTTP 协议（http://）。<br>​    • 第二部分给出了服务器的因特网地址（比如，<a href="http://www.joes-hardware.com）。" target="_blank" rel="noopener">www.joes-hardware.com）。</a><br>​    • 其余部分指定了 Web 服务器上的某个资源（比如，/specials/saw-blade.gif）。<br>现在，几乎所有的URI 都是URL。</p>
-<h4 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h4><p>​    一个HTTP事务是由一条（从客户端发往服务器的）请求命令和一个(从服务器发挥客户端的)响应结果组成。这种通信是通过HTTP报文（HTTP message）的格式化数据块进行的。</p>
-<p><img src="C:\Users\copy life\AppData\Roaming\Typora\typora-user-images\1546501168666.png" alt="1546501168666"></p>
-<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><p>​    HTTP支持几种不同的请求命令，这些命令被称为<strong>HTTP方法</strong>（HTTP method）。每条HTTP请求报文都包含一个方法。这个方法会告诉服务器要执行什么动作(获取一个Web页面、运行一个网关程序、删除一个文件等)。下图列出了5种常见的HTTP方法。</p>
-<p><img src="C:\Users\copy life\AppData\Roaming\Typora\typora-user-images\1546501597387.png" alt="1546501597387"></p>
-<h4 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h4><p>每条HTTP响应报文返回时都会携带一个状态码。状态码是一个数字的代码，告知客户端请求是否成功，或者是否需要采取其他动作。下面列出HTTP状态码：</p>
-<p><img src="C:\Users\copy life\AppData\Roaming\Typora\typora-user-images\1546506530046.png" alt="1546506530046"></p>
-<h4 id="Web页面与事务"><a href="#Web页面与事务" class="headerlink" title="Web页面与事务"></a>Web页面与事务</h4><p>​    应用程序完成一项任务时，通常会发布多个HTTP事务。比如，Web浏览器会发布一系列HTTP事务来获取并显示一个包含丰富图片的WEB页面。浏览器会执行一个事务来获取描述页面布局的“HTML”框架，然后发布另外的事务来获取每个嵌入的图片、图像面板、Java小程序等。这些嵌入式资源可能会位于不同的服务器上，如下图所示：</p>
-<p><img src="C:\Users\copy life\AppData\Roaming\Typora\typora-user-images\1546506826110.png" alt="1546506826110"></p>
-<h4 id="报文"><a href="#报文" class="headerlink" title="报文"></a>报文</h4><p>​    HTTP报文是由一行一行简单的字符串组成。HTTP报文都是纯文本，不是二进制代码，如下图显示一个简单事务的HTTP报文：</p>
-<p><img src="C:\Users\copy life\AppData\Roaming\Typora\typora-user-images\1546507339519.png" alt="1546507339519"></p>
-<p>​    从web客户端法网Web服务器的HTTP报文称为请求报文（request message）。从服务器发往客户端的报文称为响应报文（response message）,此外没有其他类型的HTTP报文。Http请求和响应报文的格式很类似。</p>
-<p>HTTP报文包括一下三个部分：</p>
-<p>​    • 起始行：报文的第一行就是起始行，在请求报文中用来说明要做些什么，在响应报文中说明出现了什么情况。<br>• 首部字段：起始行后面有零个或多个首部字段。每个首部字段都包含一个名字和一个值，为了便于解析，两者之间用冒号（:）来分隔。首部以一个空行结束。添加一个首部字段和添加新行一样简单。<br>• 主体：空行之后就是可选的报文主体了，其中包含了所有类型的数据。请求主体中包括了要发送给Web 服务器的数据；响应主体中装载了要返回给客户端的数据。起始行和首部都是文本形式且都是结构化的，而主体则不同，主体中可以包含任意的二进制数据（比如图片、视频、音轨、软件程序）。当然，主体中也可以包含文本。    </p>
-<p><img src="C:\Users\copy life\AppData\Roaming\Typora\typora-user-images\1546507774551.png" alt="1546507774551"></p>
-<p>简单的报文：</p>
-<p>​    由客户端浏览器向服务器发送了一条HTTP请求报文。这条请求的起始行中有一个GET方法，且本地资源为/tools.html。这条请求说明它使用的是1.0版的HTTP协议。请求报文没有主体，因为从服务器上GET一个简单的文档不需要数据。        服务器会回送一条Http请求报文。这条响应中包含了HTTP的版本号（HTTP/1.0）、一个成功状态码（200）、一个描述性的原因短语（ok）,以及一块响应首部字段，在所有这些内容之后跟着包含了请求文档的响应主体。content-Length首部说明了响应主题的长度，Content-Type首部说明了文档的MIME类型。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/20/虚拟环境/" data-id="cjr4aoans0002ukv3qccsmnyz" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-
 
 </section>
         
